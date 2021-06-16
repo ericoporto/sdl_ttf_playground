@@ -21,5 +21,5 @@ if(NOT libpng_content)
     include_directories(${libpng_content_SOURCE_DIR}/src/)
 
     set(PNG_LIBRARY libpng)
-    set(PNG_PNG_INCLUDE_DIR "${libpng_content_SOURCE_DIR}")
+    set(PNG_INCLUDE_DIR "${libpng_content_SOURCE_DIR}")
 endif()
