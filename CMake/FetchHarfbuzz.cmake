@@ -16,6 +16,11 @@ if(NOT harfbuzz_content)
   message("harfbuzz_content_SOURCE_DIR: ${harfbuzz_content_SOURCE_DIR}")
   add_subdirectory(${harfbuzz_content_SOURCE_DIR} ${harfbuzz_content_BINARY_DIR} EXCLUDE_FROM_ALL)
   include_directories(${harfbuzz_content_SOURCE_DIR}/src/)
+
+  set(HARFBUZZ_LIBRARY harfbuzz)
+  set(HARFBUZZ_LIBRARIES HarfBuzz::HarfBuzz)
+  set(HARFBUZZ_INCLUDE_DIRS ${harfbuzz_content_SOURCE_DIR}/src/)
+
   add_library(Harfbuzz::Harfbuzz ALIAS harfbuzz)
   add_library(HarfBuzz::HarfBuzz ALIAS harfbuzz)
   add_library(HarfBuzz ALIAS harfbuzz)
