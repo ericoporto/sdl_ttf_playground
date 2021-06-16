@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/CMake")
 
-
 # Tools like ninja don't have a pseudo-terminal so compilers assume no coloured output
 option (AGS_FORCE_COLOURED_OUTPUT "Always produce ANSI-coloured output (GNU/Clang only)." OFF)
 if (${AGS_FORCE_COLOURED_OUTPUT})
@@ -46,7 +45,7 @@ if(LINUX)
         if (CMAKE_COMPILER_IS_GNUCC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 9.0)
             # without no-pie we can't double-click run ags in Nautilus
             # this should only be needed in newer gcc versions
-            # set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fno-pie -no-pie")
+            set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fno-pie -no-pie")
         endif ()
     endif ()
 endif (LINUX)
@@ -135,6 +134,7 @@ if(NOT ANDROID)
 endif()
 include(FetchSDL2)
 include(FetchSDL_ttf)
+include(UpdateFonts)
 
 add_executable(sdl_ttf_playground main.cpp)
 target_link_libraries(sdl_ttf_playground ${SDL2_LIBRARIES} SDL2_ttf::SDL2_ttf)
