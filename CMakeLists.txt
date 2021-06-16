@@ -128,6 +128,8 @@ else()
 
 endif()
 
+include(FetchZlib)
+include(FetchLibPng)
 if(NOT ANDROID)
     include(FetchHarfbuzzFreetype)
 endif()
