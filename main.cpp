@@ -10,7 +10,7 @@ int main()
 
     SDL_Window * window = SDL_CreateWindow("SDL2_ttf Playground", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 800, 600, SDL_WINDOW_SHOWN);
     SDL_Surface *surface = SDL_GetWindowSurface(window);
-    TTF_Font *font = TTF_OpenFont("NotoColorEmoji.ttf", 72);
+    TTF_Font *font = TTF_OpenFont("TwitterColorEmoji-SVGinOT-ThickFallback.ttf", 72);
     SDL_Color color = { 255, 255, 255, 255 };
     SDL_Surface *text = TTF_RenderUTF8_Blended(font, "😄", color);
     SDL_BlitSurface(text, NULL, surface, NULL);
